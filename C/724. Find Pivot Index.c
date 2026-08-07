@@ -1,19 +1,19 @@
 int pivotIndex(int* nums, int numsSize) {
-    int totalSum = 0;
-    int leftSum = 0;
+    int left = 0;
+    int total = 0;
+    int right;
 
-    // Calculate total sum
     for (int i = 0; i < numsSize; i++) {
-        totalSum += nums[i];
+        total += nums[i];
     }
 
-    // Find pivot index
     for (int i = 0; i < numsSize; i++) {
-        if (leftSum == totalSum - leftSum - nums[i]) {
+        right = total - left - nums[i];
+        if (right == left) {
             return i;
+        } else {
+            left += nums[i];
         }
-        leftSum += nums[i];
     }
-
     return -1;
 }
