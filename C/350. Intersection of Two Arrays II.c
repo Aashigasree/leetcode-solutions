@@ -9,7 +9,7 @@ int* intersect(int* nums1, int nums1Size, int* nums2, int nums2Size,
         for (int j = 0; j < nums2Size; j++) {
             if (nums1[i] == nums2[j]) {
                 result[k] = nums1[i];
-                nums1[i] = -1;
+                nums2[j] = -1;
                 k++;
                 break;
             }
